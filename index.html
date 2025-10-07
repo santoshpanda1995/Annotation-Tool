@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Annotation Tool — Box & Polygon Modes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside id="left">
+    <div class="labels-header"><h3 style="margin:0">Labels</h3></div>
+    <div class="labels-body">
+      <div class="input-row">
+        <input id="labelInput" placeholder="Enter label name" />
+        <button class="btn" id="addLabelBtn" style="background:var(--brand)">Add</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn mode active" id="boxModeBtn">Box Mode</button>
+        <button class="btn mode" id="polyModeBtn">Polygon Mode</button>
+      </div>
+      <div id="labelsList"></div>
+    </div>
+
+<!-- Footer copyright + socials -->
+  <div class="sidebar-footer">
+    <p>© 2025 Santosh Kumar Panda</p>
+    <div class="socials">
+      <a href="https://santoshpanda1995.github.io/portfolio/" target="_blank">🐙</a>
+      <a href="https://www.linkedin.com/in/santosh-kumar-panda-50761266/" target="_blank">💼</a>
+      <a href="https://scholar.google.com/citations?user=-cqqCNoAAAAJ&hl=en/" target="_blank">🎓</a>
+      <a href="https://orcid.org/0000-0003-2820-3320/" target="_blank">🎓</a>
+    </div>
+  </div>
+  </aside>
+
+  <header>
+<button class="btn secondary" id="prevBtn">⟨ Prev</button>
+<button class="btn secondary" id="nextBtn">Next ⟩</button>
+<button class="btn success" id="exportOne">Export YOLO</button>
+<button class="btn success" id="exportAll">Export YOLO All (ZIP)</button>
+<button class="btn warn" id="exportCOCO" style="display:none">Export COCO</button>
+<button class="btn warn" id="exportMask" style="display:none">Export Binary Mask</button>
+
+    <div style="margin-left:auto;opacity:.85">Active label: <strong id="activeLabelText">None</strong></div>
+  </header>
+
+  <main>
+    <div id="progressText" class="progress-text"></div>
+
+    <div class="canvas-wrap" id="canvasWrap">
+      <canvas id="canvas"></canvas>
+      <div id="coordBox"></div>
+    </div>
+  </main>
+
+  <aside id="right">
+    <div class="thumbs-top">
+      <button class="btn danger" id="deleteImageBtn" style="background:var(--danger)">Delete Image</button>
+      <label class="file" for="fileInput">Add Images</label>
+      <input id="fileInput" type="file" accept="image/*" multiple />
+    </div>
+    <div id="thumbs" class="thumbs"></div>
+  </aside>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="app.js"></script>
+
+
+</body>
+</html>
